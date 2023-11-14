@@ -1,0 +1,151 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  .container {
+    margin-top: 50px;
+    height: 450px;
+    width: 500px;
+    background:blueviolet;
+    top: 50px;
+    box-shadow: 5px 5px 15px yellow ,4px 4px 50px green; inset;
+    border-radius: 8px;
+    text-align: center;
+
+  }
+   .jar {
+    width: 200px;
+    height: 200px;
+    background-color: #ccc;
+    border-radius: 80%;
+    margin: 0 auto;
+    position: relative;
+        box-shadow: 5px 5px 10px yellowgreen, 4px 4px 3px yellowgreen inset ;
+
+  }
+  .liquid {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    border-radius: 79%;
+  }
+#kk{
+    color:RED;
+    text-shadow:3px 3px yellow;
+    font-weight: bold;
+}
+  select {
+  box-shadow: 3px 3px 6px RED;
+  border: none;
+  outline: none;
+  background-color: #ffffff; /* White */
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+label {
+  color:black;
+  text-shadow: 3px 3px 2px yellowgreen;
+  font-weight:BOLD;
+}
+
+button {
+  color: #ffffff; 
+  background-color: #007bff;
+  box-shadow: 3px 3px rgba(0, 123, 255, 0.5); 
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+  .button-container {
+    margin-top: 20px;
+  }
+  button:hover {
+  background-color: #0056b3; 
+}
+
+button:active {
+  background-color: #003366; 
+}
+
+</style>
+</head>
+<body>
+    <center>
+  <div class="container">
+    <h1 id="kk">CHEMICAL REACTION</h1>
+    <div class="jar">
+      <div class="liquid"></div>
+    </div>
+    <div class="button-container">
+      <label for="list1">SELECT CHEMICAL 1:</label>
+      <select id="list1">
+        <option>SELECT CHEMICALS</option>
+            <option value="KMNO4">KMNO4</option>
+            <option value="naoh">NAOH</option>
+            <option value="hcl">HCL</option>
+            <option value="h2so4">H<sub>2</sub>SO<sub>4</sub></option>
+            <option value="hno3">HNO<sub>3</sub></option>
+            <option value="feso4">FeSO<sub>4</sub></option>
+            <option value="ag2so4">Ag2SO4</option>
+            <option value="znso4">ZnSO4</option>
+            <option value="methyl">Methy orange</option>
+            <option value="permag">Potasium permangnet</option>
+            <option value="edta">EDTA</option>
+            <option value="na2so4">Na2SO4</option>
+        </select>
+      <br>
+      <br>
+      <label for="list2">SELECT CHEMICAL 2:</label>
+      <select id="list2">
+        <option>SELECT CHEMICALS</option>
+        <option value="H2O">H2O</option>
+        <option value="na2co3">NA2CO3</option>
+        <option value="C6H12O6">C6H12O6</option>
+        <option value="hcl">hcl</option>
+
+      </select>
+      <br>
+      <br>
+      <button onclick="mixChemicals()">START REACTION</button>
+    </div>
+  </div>
+
+  <script>
+    function mixChemicals() {
+  let chemical1 = document.getElementById("list1").value.toLowerCase();  
+  let chemical2 = document.getElementById("list2").value.toLowerCase();  
+
+  if (chemical1 === "kmno4" && chemical2 === "h2o") {
+    let liquid = document.querySelector('.liquid');
+    liquid.style.backgroundColor = 'purple';
+  }
+  else if(chemical1 === "naoh" && chemical2 === "na2co3") {  
+    let liquid = document.querySelector('.liquid');
+    liquid.style.backgroundColor = 'orange';
+  }
+  else if(chemical1 === "hcl" && chemical2 === "c6h12o6") { 
+    let liquid = document.querySelector('.liquid');
+    liquid.style.backgroundColor = 'red';
+  }
+  else if(chemical1 === "h2so4" && chemical2 === "hcl") { 
+    let liquid = document.querySelector('.liquid');
+    liquid.style.backgroundColor = 'green';
+   
+  }
+}
+  </script>
+  </center>
+</body>
+</html>
